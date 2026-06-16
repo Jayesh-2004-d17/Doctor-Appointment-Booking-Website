@@ -43,11 +43,18 @@ const Navbar = () => {
 
 
                 <button
-                    onClick={() => window.location.href = import.meta.env.VITE_ADMIN_URL}
-                    className='border px-5 py-1 rounded-full text-sm font-medium hover:bg-primary hover:text-white transition-all'
-                >
-                    Admin Panel
-                </button>
+  onClick={() =>
+    window.location.href =
+      "https://doctor-appointment-booking-website-blue.vercel.app"
+  }
+>
+  Admin Panel
+</button>
+
+
+                    //className='border px-5 py-1 rounded-full text-sm font-medium hover:bg-primary hover:text-white transition-all'
+
+
             </ul>
 
             {/* Right Section */}
@@ -97,7 +104,7 @@ const Navbar = () => {
                         <NavLink onClick={() => setShowMenu(false)} to='/contact'><p className='px-4 py-2'>CONTACT</p></NavLink>
 
                         {/* Admin Panel in Mobile */}
-                        <NavLink to="/admin-login" onClick={() => window.location.href = "http://localhost:5175"}>
+                        <NavLink to="/admin-login" onClick={() => window.location.href = import.meta.env.VITE_ADMIN_URL}>
                             <p>ADMIN PANEL</p>
                         </NavLink>
                     </ul>
