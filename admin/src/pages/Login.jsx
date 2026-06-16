@@ -3,15 +3,19 @@ import { AdminContext } from '../context/AdminContext'
 import { DoctorContext } from '../context/DoctorContext'
 import axios from 'axios'
 import { toast } from 'react-toastify'
+import { useNavigate } from 'react-router-dom'
 
-const Login = () => {
+const AdminLogin = () => {
+
+  const navigate = useNavigate()
 
   const [state, setState] = useState('Admin')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
-  const { backendUrl, setAToken } = useContext(AdminContext)
-  const { setDToken } = useContext(DoctorContext)
+   const { backendUrl, setAToken } = useContext(AdminContext)
+   const { setDToken } = useContext(DoctorContext)
+  
 
   const onSubmitHandler = async (event) => {
     event.preventDefault()
@@ -33,6 +37,9 @@ const Login = () => {
           setAToken(data.token)
 
           toast.success("Admin Login Successful ✅")
+
+          navigate('/admin-dashboard')
+
         } else {
           toast.error(data.message)
         }
@@ -55,6 +62,9 @@ const Login = () => {
           console.log("Doctor Token:", data.token)
 
           toast.success("Doctor Login Successful ✅")
+
+          navigate('/doctor-dashboard')
+          
         } else {
           toast.error(data.message)
         }
@@ -68,7 +78,7 @@ const Login = () => {
 
   return (
     <form onSubmit={onSubmitHandler} className='min-h-[80vh] flex items-center'>
-      
+
       <div className='flex flex-col gap-3 m-auto items-start p-8 min-w-[340px] sm:min-w-96 border rounded-xl text-[#5E5E5E] text-sm shadow-lg'>
 
         {/* Title */}
@@ -138,4 +148,4 @@ const Login = () => {
   )
 }
 
-export default Login
+export default AdminLogin
