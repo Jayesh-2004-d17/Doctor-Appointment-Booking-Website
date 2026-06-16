@@ -44,8 +44,10 @@ const Navbar = () => {
 
                 <button
   onClick={() =>
-    window.location.href =
-      "https://doctor-appointment-booking-website-blue.vercel.app"
+    window.open(
+      "https://doctor-appointment-booking-website-blue.vercel.app",
+      "_self"
+    )
   }
 >
   Admin Panel
