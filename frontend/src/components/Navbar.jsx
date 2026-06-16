@@ -43,18 +43,20 @@ const Navbar = () => {
 
 
                 <button
-  onClick={() =>
-    window.open(
-      "https://doctor-appointment-booking-website-blue.vercel.app",
-      "_self"
-    )
-  }
->
-  Admin Panel
-</button>
+                className='border px-5 py-1 rounded-full text-sm font-medium hover:bg-primary hover:text-white transition-all'
+                    onClick={() =>
+                        window.open(
+                            "https://doctor-appointment-booking-website-blue.vercel.app",
+                            "_self"
+                        )
+                    }
+                    
+                >
+                    Admin Panel
+                </button>
 
 
-                    //className='border px-5 py-1 rounded-full text-sm font-medium hover:bg-primary hover:text-white transition-all'
+
 
 
             </ul>
